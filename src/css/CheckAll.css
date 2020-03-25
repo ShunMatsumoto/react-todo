@@ -1,0 +1,16 @@
+.check-all {
+  padding: 15px 0;
+}
+
+.check-all label {
+  font-weight: 600;
+}
+
+.check-all input[type=checkbox] {
+  transform: scale(1.7);
+  margin-right: 10px;
+}
+
+.check-all span {
+  color: crimson;
+}

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import '../css/App.css'
+
 import Form from './Form';
 import Filter from './Filter';
 import Todo from './Todo';
@@ -38,43 +40,45 @@ class App extends React.Component {
     })
 
     return (
-      <div>
-        <Form onSubmit={this.handleSubmit} />
+      <div className="container">
+        <h1>Todos</h1>
+        <div className="contents">
+          <Form onSubmit={this.handleSubmit} />
 
-        <CheckAll allCompleted={
-          todos.length > 0 && todos.every(({ completed }) => completed)
-        }
-          onChange={this.handleChangeAllCompleted}
-        />
+          <CheckAll allCompleted={
+            todos.length > 0 && todos.every(({ completed }) => completed)
+          }
+            onChange={this.handleChangeAllCompleted}
+          />
 
-        <Filter filter={filter} onChange={this.handleChangeFilter} />
+          <Filter filter={filter} onChange={this.handleChangeFilter} />
 
-        <ul>
-          {filteredTodos.map(({ id, text, completed, editing }) => (
-            <li key={id}>
-              {editing ? (
-                <EditTodo
-                  id={id}
-                  text={text}
-                  onCancel={this.handleChangeTodoAttribute}
-                  onSubmit={this.handleUpdataTodoText}
-                />
-              ) : (
-                  <Todo
+          <ul>
+            {filteredTodos.map(({ id, text, completed, editing }) => (
+              <li key={id}>
+                {editing ? (
+                  <EditTodo
                     id={id}
                     text={text}
-                    completed={completed}
-                    onChange={this.handleChangeTodoAttribute}
-                    onDelete={this.handleClickDelete}
+                    onCancel={this.handleChangeTodoAttribute}
+                    onSubmit={this.handleUpdataTodoText}
                   />
-                )}
-            </li>
-          ))}
-        </ul>
-
-        <button onClick={this.handleClickDeleteCompleted}>
-          完了済を全て削除する
+                ) : (
+                    <Todo
+                      id={id}
+                      text={text}
+                      completed={completed}
+                      onChange={this.handleChangeTodoAttribute}
+                      onDelete={this.handleClickDelete}
+                    />
+                  )}
+              </li>
+            ))}
+          </ul>
+          <button onClick={this.handleClickDeleteCompleted} className="all-delete">
+            <span>完了済を全て削除する</span>
           </button>
+        </div>
       </div>
     );
   }

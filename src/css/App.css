@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #eee;
+}
+
+.container {
+}
+
+.container h1 {
+  padding: 20px;
+  font-size: 60px;
+	font-weight: 900;
+	text-align: center;
+  color: rgba(175, 47, 47, 0.15);
+}
+
+.contents {
+  height: 100%;
+  max-width: 600px;
+  background-color: #fff;
+  margin: 30px auto;
+  padding: 30px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
+              0 25px 50px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.all-delete {
+	cursor: pointer;
+  padding: 8px 38px 8px 8px;
+  color: #da3c41;
+  border-radius: 2px;
+	border: 2px solid #da3c41;
+  border-radius: 50px;
+}
+
+.all-delete span {
+  text-align: center;
+}
+
+.contents {
+}
+
+.contents ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contents ul li {
+  padding: 5px 0;
+}
+
+.contents input[type=checkbox] {
+  transform: scale(1.7);
+  margin-right: 10px;
+}

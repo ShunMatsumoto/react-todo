@@ -1,4 +1,5 @@
 import React from 'react'
+import "../css/EditTodo.css"
 
 class EditTodo extends React.Component {
   constructor(props) {
@@ -11,14 +12,17 @@ class EditTodo extends React.Component {
 
   render() {
     return (
-      <div>
+      <div class="edit-box">
         <input
           type="text"
           value={this.state.text}
           onChange={this.handleChange}
         />
-        <button　onClick={this.handleClickCancel}>キャンセル</button>
-        <button　onClick={this.handleSubmit}>更新</button>
+        <div edit-button-box>
+          <button onClick={this.handleClickCancel} className="btn-sticky">取消</button>
+          <button onClick={this.handleSubmit} className="btn-sticky">更新</button>
+        </div>
+
       </div>
     );
   }

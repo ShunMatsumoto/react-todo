@@ -1,4 +1,5 @@
 import React from 'react'
+import "../css/Form.css"
 
 class Form extends React.Component {
   constructor(props) {
@@ -11,10 +12,16 @@ class Form extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input type="text" value={this.state.input} onChange={this.hendleChange} />
-        <button>追加</button>
-      </form>
+      <div className="form-box">
+        <form onSubmit={this.handleSubmit}>
+          <input type="text" value={this.state.input} onChange={this.hendleChange} />
+          <button>
+            <span>
+              追加
+            </span>
+          </button>
+        </form>
+      </div>
     )
   }
 

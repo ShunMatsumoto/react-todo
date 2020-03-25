@@ -12,13 +12,13 @@ class EditTodo extends React.Component {
 
   render() {
     return (
-      <div class="edit-box">
+      <div className="edit-box">
         <input
           type="text"
           value={this.state.text}
           onChange={this.handleChange}
         />
-        <div edit-button-box>
+        <div className="edit-button-box">
           <button onClick={this.handleClickCancel} className="btn-sticky">取消</button>
           <button onClick={this.handleSubmit} className="btn-sticky">更新</button>
         </div>
